@@ -585,7 +585,7 @@ public:
 
 //----------------------------
 // Called from ProcessInputInList when selection is changed to different item.
-   virtual void SelectionChanged(int prev_selection){}
+   virtual void SelectionChanged(int /*prev_selection*/){}
 
 //----------------------------
 // Called from ProcessInputInList when scroll position is changed as result of using scroll bar, or dragging and moving content, or in kinetic scrolling animation.
@@ -656,7 +656,7 @@ public:
 
 //----------------------------
 
-   C_text_editor(dword te_flags, int _font_index, dword _font_flags):
+   C_text_editor(dword /*te_flags*/, int _font_index, dword _font_flags):
       scroll_y(0),
       font_index(_font_index),
       font_flags(_font_flags)
@@ -705,7 +705,7 @@ public:
 //----------------------------
 // Get length of currently edited inline text length and position.
 // Inline text range is used on some platforms in multi-tap or predictive mode, and should be displayed differently (underline).
-   virtual int GetInlineText(int &pos) const{ return 0; }
+   virtual int GetInlineText(int &/*pos*/) const{ return 0; }
 
 //----------------------------
 // Activate or deactivate text editor. Only one editor may be active at one time.
@@ -729,7 +729,7 @@ public:
 
 //----------------------------
 // If needed, directly process input.
-   virtual void ProcessInput(const S_user_input &ui){}
+   virtual void ProcessInput(const S_user_input &/*ui*/){}
 
    virtual bool IsReadOnly() const = 0;
 };
@@ -1153,7 +1153,7 @@ public:
 
 //----------------------------
 // Draw menu item selection.
-   virtual void DrawMenuSelection(const C_menu *menu, const S_rect &rc){ DrawSelection(rc); }
+   virtual void DrawMenuSelection(const C_menu */*menu*/, const S_rect &rc){ DrawSelection(rc); }
 
 //----------------------------
 // Draw soft button rectangle. Returns true if rectangle was drawn (for touch screens).
