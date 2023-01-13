@@ -66,8 +66,8 @@ public:
    public:
       virtual ~C_file_base(){}
       virtual E_FILE_MODE GetMode() const = 0;
-      virtual bool Read(void *mem, dword len){ return false; }
-      virtual E_WRITE_STATUS Write(const void *mem, dword len){ return WRITE_FAIL; }
+      virtual bool Read(void */*mem*/, dword /*len*/){ return false; }
+      virtual E_WRITE_STATUS Write(const void */*mem*/, dword /*len*/){ return WRITE_FAIL; }
       virtual E_WRITE_STATUS WriteFlush(){ return WRITE_FAIL; }
 
       virtual bool ReadByte(byte&){ return false; }
@@ -78,7 +78,7 @@ public:
       virtual dword GetFileSize() const = 0;
       virtual dword GetCurrPos() const = 0;
       virtual bool SetPos(dword pos) = 0;
-      virtual void SetCacheSize(dword sz){}
+      virtual void SetCacheSize(dword /*sz*/){}
    };
 //----------------------------
 protected:
