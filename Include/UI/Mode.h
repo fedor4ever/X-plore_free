@@ -69,7 +69,7 @@ public:
 
 //----------------------------
 // Process input in control. It may be touch event on clicked control, or key event on focused control.
-   virtual void ProcessInput(S_user_input &ui){ }
+   virtual void ProcessInput(S_user_input &/*ui*/){ }
 
 //----------------------------
 // Get default height of control (e.g. line spacing for text line).
@@ -83,7 +83,7 @@ public:
 
 //----------------------------
 // Tick control by periodical timer. 'time' is time from last call of this function, in milliseconds.
-   virtual void Tick(dword time){ }
+   virtual void Tick(dword /*time*/){ }
 };
 
 //----------------------------
@@ -389,10 +389,10 @@ public:
    public:
    //----------------------------
    // Cursor moved up while we're already on top line.
-      virtual void TextEntryCursorMovedUpOnTop(C_ctrl_text_entry *ctrl){}
+      virtual void TextEntryCursorMovedUpOnTop(C_ctrl_text_entry */*ctrl*/){}
    //----------------------------
    // Cursor moved down while we're already on bottom line.
-      virtual void TextEntryCursorMovedDownOnBottom(C_ctrl_text_entry *ctrl){}
+      virtual void TextEntryCursorMovedDownOnBottom(C_ctrl_text_entry */*ctrl*/){}
    };
 private:
    dword bgnd_color;
@@ -555,7 +555,7 @@ protected:
 
 //----------------------------
 // Called from ProcessInputInList when selection is changed to different item.
-   virtual void SelectionChanged(int prev_selection){}
+   virtual void SelectionChanged(int /*prev_selection*/){}
 
 //----------------------------
 // Called from ProcessInputInList when scroll position is changed as result of using scroll bar, or dragging and moving content, or in kinetic scrolling animation.
@@ -696,11 +696,11 @@ public:
 
 //----------------------------
 // Notification on selected menu item 'itm', or -1 if menu is closed, or -2 if selection changes (and menu sel change notify is set).
-   virtual void ProcessMenu(int itm, dword menu_id){ assert(0); }
+   virtual void ProcessMenu(int /*itm*/, dword /*menu_id*/){ assert(0); }
 
 //----------------------------
 // Tick mode by periodical timer. 'time' is time from last call of this function, in milliseconds.
-   virtual void Tick(dword time, bool &redraw){ }
+   virtual void Tick(dword /*time*/, bool &/*redraw*/){ }
 
 //----------------------------
 // Draw entire mode's screen.
@@ -708,15 +708,15 @@ public:
 
 //----------------------------
 // Event from socket operation.
-   virtual void SocketEvent(C_socket_notify::E_SOCKET_EVENT ev, C_socket *socket, bool &redraw){ assert(0); }
+   virtual void SocketEvent(C_socket_notify::E_SOCKET_EVENT /*ev*/, C_socket */*socket*/, bool &/*redraw*/){ assert(0); }
 
 //----------------------------
 // Notification from active text editor.
-   virtual void TextEditNotify(bool cursor_moved, bool text_changed, bool &redraw){ redraw = true; }
+   virtual void TextEditNotify(bool /*cursor_moved*/, bool /*text_changed*/, bool &redraw){ redraw = true; }
 
 //----------------------------
 // Called when application focus is changed.
-   virtual void FocusChange(bool foreground){}
+   virtual void FocusChange(bool /*foreground*/){}
 
 //----------------------------
 // Draw parent mode, or clear screen if there's no parent.
@@ -781,7 +781,7 @@ public:
 //----------------------------
 // Chance to initialize touch menu when some control is clicked.
 // Implementing mode must create touch menu and setup menu items. if menu!=NULL, then it will be further prepared by caller code.
-   virtual void InitTouchMenu(C_ui_control *touch_ctrl){ }
+   virtual void InitTouchMenu(C_ui_control */*touch_ctrl*/){ }
 
 //----------------------------
 // Activate this mode, make it current mode. Stop timer of parent mode (if any) if needed.
@@ -799,11 +799,11 @@ public:
 
 //----------------------------
 // Called when button located on softkey bar is clicked (not softkey, but button between softkeys).
-   virtual void OnSoftBarButtonPressed(dword index){}
+   virtual void OnSoftBarButtonPressed(dword /*index*/){}
 
 //----------------------------
 // Called when button control is clicked.
-   virtual void OnButtonClicked(dword ctrl_id){}
+   virtual void OnButtonClicked(dword /*ctrl_id*/){}
 
 //----------------------------
 // Draw all controls in this mode.
