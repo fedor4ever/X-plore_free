@@ -124,7 +124,7 @@ public:
       tmp.Copy(init_text);
       SetInitText(tmp);
    }
-   virtual void SetCase(dword allowed, dword curr){
+   virtual void SetCase(dword allowed, dword /*curr*/){
       allowed_cases = allowed;
    }
    virtual bool IsCursorVisible() const{ return (cursor_on && cursor_flash_phase); }
