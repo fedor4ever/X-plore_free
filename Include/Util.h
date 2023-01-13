@@ -211,7 +211,7 @@ void operator delete[](void *vp)
 ;
 
 inline void *operator new[](size_t sz, bool l){ return operator new(sz, l); }
-inline void operator delete[](void *vp, bool l){ operator delete[](vp); }
+inline void operator delete[](void *vp, bool /*l*/){ operator delete[](vp); }
 
 //----------------------------
 #ifdef __SYMBIAN32__
